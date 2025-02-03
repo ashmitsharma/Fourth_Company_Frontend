@@ -1,0 +1,39 @@
+.custom-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-design {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.section-design-left {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.section-design-right {
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* Responsive adjustments while preserving desktop view */
+@media screen and (max-width: 768px) {
+  .section-design {
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-design {
+    height: 60%;
+  }
+}

@@ -1,0 +1,45 @@
+.stats-counter-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 2rem;
+    transform: translateY(-50%);
+}
+  
+.stats-counter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 12px;
+}
+  
+@media (max-width: 768px) {
+    .stats-counter-overlay {
+        position: relative;
+        transform: none;
+        padding: 1rem;
+        background-color: #EAEAEA;
+    }
+  
+    .stats-counter-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        justify-content: center;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-counter-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}

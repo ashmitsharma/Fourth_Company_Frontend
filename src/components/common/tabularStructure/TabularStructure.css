@@ -1,0 +1,143 @@
+.tabular-structure {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.steps-grid {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.step-item {
+    width: 100%;
+    position: relative;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    text-align: justified;
+}
+
+.left-step {
+    padding-right: 1rem;
+}
+
+.right-step {
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+
+.step-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    color: #1F2937;
+    margin-bottom: 0.5rem;
+}
+
+.step-description-list {
+    font-size: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.step-description-item {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+    color: #1F2937;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.step-description-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #6A0DAD;
+}
+
+@media (max-width: 992px) {
+    .steps-grid {
+        column-gap: 3rem;
+    }
+
+    .step-item {
+        font-size: 22px;
+    }
+
+    .step-description-item {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: 2rem;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .step-item {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .left-step, .right-step {
+        padding: 0;
+        margin: 0;
+    }
+
+    .step-description-item {
+        font-size: 16px;
+        padding-left: 1.25rem;
+    }
+
+    .step-description-item::before {
+        left: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabular-structure {
+        padding: 0 0.8rem;
+    }
+
+    .step-item {
+        font-size: 18px;
+    }
+
+    .step-title {
+        font-size: 20px;
+    }
+
+    .step-description-item {
+        font-size: 15px;
+        line-height: 1.5;
+        padding-left: 1rem;
+    }
+
+    .step-description-item::before {
+        left: 0;
+    }
+}

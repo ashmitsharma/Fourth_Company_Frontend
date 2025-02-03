@@ -1,0 +1,103 @@
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Poppins, sans-serif;
+    max-width: 800px;
+    width: 100%;
+}
+
+.contact-us-form h2 {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 600;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+}
+
+.form-group {
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border: none;
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    font-size: clamp(14px, 2vw, 16px);
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group textarea[name="message"] {
+    height: clamp(200px, 30vh, 250px);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #8833FF;
+    background-color: #fff;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #6A0DAD 0%, #5731ED 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(14px, 2vw, 16px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #5731ED 0%, #6A0DAD 100%);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Placeholder styles */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+/* Focus styles for better accessibility */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 2px solid #8833FF;
+    outline-offset: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-us-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-us-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

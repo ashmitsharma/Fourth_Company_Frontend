@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://hashtechinfo.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Common files to disallow
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*?*
+
+# Allow important pages
+Allow: /services
+Allow: /bootcamp
+Allow: /contact-us
+Allow: /privacy-policy

@@ -1,0 +1,5 @@
+.gradient-bar {
+  width: 100%;
+  height: 43px;
+  background: linear-gradient(90deg, #1CDAFF 0%, #5731ED 100%);
+}

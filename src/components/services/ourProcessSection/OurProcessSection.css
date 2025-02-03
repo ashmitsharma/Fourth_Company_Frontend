@@ -1,0 +1,67 @@
+.our-plans-section {
+    
+}
+
+.our-process-container {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.our-process-container h1 {
+    font-family: Poppins, sans-serif;
+    font-size: 40;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.our-process-description {
+    font-family: Poppins, sans-serif;
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: black;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .our-process-container {
+        padding: 2rem 0;
+    }
+
+    .our-process-container h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .our-process-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .our-process-container {
+        padding: 1.5rem 0;
+    }
+
+    .our-process-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .our-process-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        padding: 0 1rem;
+    }
+}

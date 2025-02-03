@@ -1,0 +1,168 @@
+.bootcamp-steps-container {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.bootcamp-steps-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+.bootcamp-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.bootcamp-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+}
+
+.step-circle {
+    width: 170px;
+    height: 170px;
+    background: #F2F2F2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.step-circle:hover {
+    transform: scale(1.05);
+}
+
+.step-icon {
+    font-size: 40px;
+}
+
+/* Horizontal connector for desktop */
+.step-connector {
+    position: absolute;
+    top: 85px;
+    left: calc(100% - 20px);
+    width: calc(4rem + 40px);
+    height: 0;
+    border-top: 2px dashed #333;
+    z-index: 1;
+}
+
+/* Arrow for horizontal connector */
+.step-connector::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid #333;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.bootcamp-step-title {
+    margin-top: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .bootcamp-steps-container {
+        padding: 3rem;
+    }
+
+    .step-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .step-icon {
+        font-size: 35px;
+    }
+
+    .step-connector {
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bootcamp-steps {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .bootcamp-step {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .step-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .step-icon {
+        font-size: 30px;
+    }
+
+    /* Vertical connector for mobile */
+    .step-connector {
+        top: calc(100% - 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2rem;
+        border-top: none;
+        border-left: 2px dashed #333;
+    }
+
+    /* Arrow for vertical connector */
+    .step-connector::after {
+        right: auto;
+        left: 50%;
+        top: calc(100% + 2px);
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid #333;
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bootcamp-steps-container {
+        padding: 2rem 1rem;
+    }
+
+    .step-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .step-icon {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,124 @@
+.cta-container {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAEAEA;
+    text-align: center;
+}
+
+.cta-heading {
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #232323;
+}
+
+.cta-description {
+    padding: 0 400px;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.cta-sub-heading {
+    font-family: Poppins, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 1400px) {
+    .cta-description {
+        padding: 0 300px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cta-container {
+        padding: 60px 0;
+    }
+
+    .cta-heading {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .cta-description {
+        padding: 0 200px;
+        font-size: 22px;
+    }
+
+    .cta-sub-heading {
+        font-size: 26px;
+        margin-bottom: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .cta-container {
+        padding: 50px 0;
+    }
+
+    .cta-heading {
+        font-size: 36px;
+        margin-bottom: 18px;
+    }
+
+    .cta-description {
+        padding: 0 100px;
+        font-size: 20px;
+    }
+
+    .cta-sub-heading {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        padding: 40px 20px;
+    }
+
+    .cta-heading {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .cta-description {
+        padding: 0 40px;
+        font-size: 18px;
+    }
+
+    .cta-sub-heading {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-container {
+        padding: 30px 16px;
+    }
+
+    .cta-heading {
+        font-size: 28px;
+        margin-bottom: 14px;
+    }
+
+    .cta-description {
+        padding: 0 16px;
+        font-size: 16px;
+    }
+
+    .cta-sub-heading {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+}

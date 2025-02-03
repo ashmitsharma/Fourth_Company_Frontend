@@ -1,0 +1,185 @@
+.bootcamp-hero-section {
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    padding-top: 80px; /* Add padding for header */
+}
+
+.bootcamp-hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    width: 100%;
+    gap: 2rem;
+}
+
+.bootcamp-hero-content {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.bootcamp-hero-title {
+    font-family: Poppins, sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.bootcamp-hero-title span {
+    color: #7C3AED;
+}
+
+.bootcamp-hero-subtitle {
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.bootcamp-hero-description {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: justified;
+}
+
+.bootcamp-hero-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+}
+
+.bootcamp-hero-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Large screens */
+@media screen and (max-width: 1400px) {
+    .bootcamp-hero-container {
+        padding: 5rem;
+    }
+    
+    .bootcamp-hero-title {
+        font-size: 42px;
+    }
+    
+    .bootcamp-hero-subtitle,
+    .bootcamp-hero-description {
+        font-size: 22px;
+    }
+}
+
+/* Medium screens */
+@media screen and (max-width: 1200px) {
+    .bootcamp-hero-container {
+        padding: 4rem;
+    }
+    
+    .bootcamp-hero-title {
+        font-size: 38px;
+    }
+    
+    .bootcamp-hero-subtitle,
+    .bootcamp-hero-description {
+        font-size: 20px;
+    }
+}
+
+/* Tablet screens */
+@media screen and (max-width: 992px) {
+    .bootcamp-hero-section {
+        padding-top: 70px;
+    }
+
+    .bootcamp-hero-container {
+        padding: 3rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bootcamp-hero-content {
+        max-width: 100%;
+        align-items: center;
+    }
+    
+    .bootcamp-hero-title {
+        font-size: 36px;
+    }
+    
+    .bootcamp-hero-subtitle,
+    .bootcamp-hero-description {
+        font-size: 18px;
+    }
+    
+    .bootcamp-hero-description {
+        text-align: center;
+        max-width: 800px;
+    }
+    
+    .bootcamp-hero-images {
+        max-width: 70%;
+        margin-top: 2rem;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+    .bootcamp-hero-section {
+        padding-top: 60px;
+    }
+
+    .bootcamp-hero-container {
+        padding: 2.5rem 2rem;
+    }
+    
+    .bootcamp-hero-title {
+        font-size: 32px;
+    }
+    
+    .bootcamp-hero-subtitle,
+    .bootcamp-hero-description {
+        font-size: 16px;
+    }
+    
+    .bootcamp-hero-images {
+        max-width: 90%;
+    }
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 480px) {
+    .bootcamp-hero-section {
+        padding-top: 50px;
+    }
+
+    .bootcamp-hero-container {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .bootcamp-hero-content {
+        gap: 1rem;
+    }
+    
+    .bootcamp-hero-title {
+        font-size: 28px;
+    }
+    
+    .bootcamp-hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .bootcamp-hero-description {
+        font-size: 14px;
+    }
+}
