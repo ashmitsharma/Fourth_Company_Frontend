@@ -1,50 +1,34 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Section from "../../common/Section/Section";
 import BackgroundImage from "../../../assets/images/testimonalBackground.webp";
 import './HomeTestimonalSection.css';
 import Button from "../../common/Button/Button";
-import SampleTestimonialImage from "../../../assets/images/sampleTestimonialImage.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 interface Testimonial {
-    name: string;
-    position: string;
-    description: string;
-    image: string;
+    id: number;
+    full_name: string;
+    designation: string;
+    comment: string;
+    image_url: string;
 }
 
-const testimonials: Testimonial[] = [
-    {
-        name: "John Doe",
-        position: "UI/UX Designer",
-        description: "HashTech's training program was transformative. Their personalized approach and industry-focused curriculum helped me secure my dream role. The mentors provided exceptional guidance throughout.",
-        image: SampleTestimonialImage
-    },
-    {
-        name: "Sarah Smith",
-        position: "Full Stack Developer",
-        description: "The support from HashTech goes beyond technical training. Their career guidance and interview preparation were instrumental in my success. I'm now working at a top tech company.",
-        image: SampleTestimonialImage
-    },
-    {
-        name: "Michael Chen",
-        position: "Data Engineer",
-        description: "I can't thank HashTech enough for their comprehensive training. The hands-on projects and real-world experience were exactly what I needed. Within weeks of completing the program, I received multiple offers.",
-        image: SampleTestimonialImage
-    }
-];
+const TestimonialCard: React.FC<Testimonial> = ({ id, full_name, designation, comment, image_url }) => {
+    const getCompleteImageUrl = (baseUrl: string, id: number) => {
+        return `${import.meta.env.VITE_BACKEND_URL}${baseUrl}${id}.webp`;
+    };
 
-const TestimonialCard: React.FC<Testimonial> = ({ name, position, description, image }) => {
     return (
         <div className="home-testimonial-card">
             <div className="home-testimonial-card-content">
-                <span>{name}</span>
-                <span>{position}</span>
-                <p>{description}</p>
+                <span>{full_name}</span>
+                <span>{designation}</span>
+                <p>{comment}</p>
             </div>
             <div className="home-testimonial-card-image">
-                <img src={image} alt={name} />
+                <img src={getCompleteImageUrl(image_url, id)} alt={full_name} />
             </div>
         </div>
     );
@@ -52,23 +36,45 @@ const TestimonialCard: React.FC<Testimonial> = ({ name, position, description, i
 
 const HomeTestimonalSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+    const [error, setError] = useState<string>("");
 
     useEffect(() => {
+        const fetchTestimonials = async () => {
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}`, {
+                    headers: {
+                        Authorization: `Bearer ${import.meta.env.VITE_BEARER_TOKEN}`
+                    }
+                });
+                setTestimonials(response.data);
+            } catch (err) {
+                setError("Failed to fetch testimonials");
+                console.error("Error fetching testimonials:", err);
+            }
+        };
+
+        fetchTestimonials();
+    }, []);
+
+    useEffect(() => {
+        if (testimonials.length === 0) return;
+
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % testimonials.length);
         }, 5000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [testimonials]);
 
     const handlePrevSlide = () => {
-        setCurrentSlide((prev) => 
+        setCurrentSlide((prev) =>
             prev === 0 ? testimonials.length - 1 : prev - 1
         );
     };
 
     const handleNextSlide = () => {
-        setCurrentSlide((prev) => 
+        setCurrentSlide((prev) =>
             (prev + 1) % testimonials.length
         );
     };
@@ -81,48 +87,41 @@ const HomeTestimonalSection = () => {
         >
             <div className="home-testimonial-section-container">
                 <h1>Hear it from our <span>Candidates</span></h1>
-                <h3>We've helped <span>2,000+</span> candidates of all <br/> sorts of backgrounds land great jobs</h3>
+                <h3>We've helped <span>2,000+</span> candidates of all <br /> sorts of backgrounds land great jobs</h3>
                 <Button text='Join the Network' to='/contact-us' />
-                
-                <div className="home-testimonial-carousel">
-                    <button 
-                        className="home-testimonial-nav-button prev" 
-                        onClick={handlePrevSlide}
-                        aria-label="Previous testimonial"
-                    >
-                        <FontAwesomeIcon icon={faChevronLeft} />
-                    </button>
 
-                    <div className="home-testimonial-cards">
-                        {testimonials.map((testimonial, index) => (
-                            <div 
-                                key={index}
-                                className={`home-testimonial-slide ${index === currentSlide ? 'active' : ''}`}
-                            >
-                                <TestimonialCard {...testimonial} />
-                            </div>
-                        ))}
-                    </div>
+                {error && <p className="error-message">{error}</p>}
 
-                    <button 
-                        className="home-testimonial-nav-button next" 
-                        onClick={handleNextSlide}
-                        aria-label="Next testimonial"
-                    >
-                        <FontAwesomeIcon icon={faChevronRight} />
-                    </button>
-                </div>
-
-                {/* <div className="home-testimonial-indicators">
-                    {testimonials.map((_, index) => (
+                {testimonials.length > 0 && (
+                    <div className="home-testimonial-carousel">
                         <button
-                            key={index}
-                            className={`home-testimonial-indicator ${index === currentSlide ? 'active' : ''}`}
-                            onClick={() => setCurrentSlide(index)}
-                            aria-label={`Go to testimonial ${index + 1}`}
-                        />
-                    ))}
-                </div> */}
+                            className="home-testimonial-nav-button prev"
+                            onClick={handlePrevSlide}
+                            aria-label="Previous testimonial"
+                        >
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </button>
+
+                        <div className="home-testimonial-cards">
+                            {testimonials.map((testimonial, index) => (
+                                <div
+                                    key={testimonial.id}
+                                    className={`home-testimonial-slide ${index === currentSlide ? 'active' : ''}`}
+                                >
+                                    <TestimonialCard {...testimonial} />
+                                </div>
+                            ))}
+                        </div>
+
+                        <button
+                            className="home-testimonial-nav-button next"
+                            onClick={handleNextSlide}
+                            aria-label="Next testimonial"
+                        >
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </button>
+                    </div>
+                )}
             </div>
         </Section>
     );

@@ -12,11 +12,36 @@
 
 .recent-candidates-title {
     font-family: Poppins, sans-serif;
-    font-size: 40px;
+    font-size: clamp(24px, 5vw, 40px);
     font-weight: 600;
-    line-height: 49.67px;
+    line-height: 1.24; /* Ensure this matches your actual line height */
     text-align: center;
-    padding: 0 400px;
+    padding: 0 clamp(20px, 10vw, 400px);
+    display: block; /* Without this, it might not work as expected */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Optional: for partial words at the end */
+}
+
+/* This pseudo-element will help control the number of lines */
+.recent-candidates-title::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, transparent, #EAEAEA); /* Match with your background */
+    padding: 0 1em 0 0;
+    visibility: hidden;
+}
+
+/* This will ensure we only see three lines */
+.recent-candidates-title {
+    max-height: calc(1.24em * 3); /* Adjust 1.24em if your line height differs */
+    position: relative;
+}
+
+/* When content overflows, show the ellipsis */
+.recent-candidates-title:has(::after) {
+    visibility: visible;
 }
 
 .recent-candidates-title span {
@@ -37,9 +62,8 @@
 
 @media screen and (max-width: 1024px) {
     .recent-candidates-title {
-        padding: 0 20px;
-        font-size: 28px;
-        line-height: 38px;
+        /* No need for explicit size changes as clamp handles it */
+        padding: 0 clamp(20px, 5vw, 400px); /* Adjust padding for smaller screens */
     }
 }
 
@@ -52,12 +76,9 @@
         display: block;
     }
     
-    .recent-candidates-title {
-        font-size: 24px;
-        line-height: 32px;
-    }
-    
     .recent-candidates {
         padding: 20px;
     }
+    
+    /* No need to explicitly set font size here as clamp will take care of it */
 }

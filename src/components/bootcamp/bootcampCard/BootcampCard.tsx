@@ -1,22 +1,18 @@
 import React from 'react';
 import './BootcampCard.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt, faClock, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCalendarAlt, faClock, faUser } from '@fortawesome/free-solid-svg-icons';
 
 interface BootcampCardProps {
     image: string;
     title: string;
-    date?: string;
-    time?: string;
-    instructor?: string;
 }
 
 const BootcampCard: React.FC<BootcampCardProps> = ({
     image,
-    title,
-    date = "TBA",
-    time = "TBA",
-    instructor = "TBA"
+    title
 }) => {
     return (
         <div className="bootcamp-card">
@@ -51,7 +47,9 @@ const BootcampCard: React.FC<BootcampCardProps> = ({
                     </div>
                 </div>
                 <div className="bootcamp-card-border"></div>
-                <button className="bootcamp-card-button">Join Now!</button>
+                <Link to="/contact-us" className="bootcamp-card-button">
+                    Join Now!
+                </Link>
             </div>
         </div>
     );

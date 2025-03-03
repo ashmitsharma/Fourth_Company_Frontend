@@ -2,16 +2,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 72px;
-    padding: 0 32px;
+    height: clamp(40px, 6vw, 72px);
+    padding: 0 clamp(16px, 3vw, 32px);
     background: linear-gradient(90deg, #6A0DAD 0%, #5731ED 100%);
     color: white;
     text-decoration: none;
     border: none;
-    border-radius: 8px;
+    border-radius: clamp(6px, 0.8vw, 8px);
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    font-size: 32px;
+    font-size: clamp(20px, 3vw, 32px);
     font-weight: 600;
     transition: all 0.2s ease-in-out;
     white-space: nowrap;
@@ -19,39 +19,17 @@
 
 .custom-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(106, 13, 173, 0.1);
+    box-shadow: 0 clamp(2px, 0.4vw, 4px) clamp(3px, 0.6vw, 6px) rgba(106, 13, 173, 0.1);
 }
 
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .custom-button {
-        height: 64px;
-        font-size: 28px;
-        padding: 0 28px;
-    }
-}
-
-@media (max-width: 992px) {
-    .custom-button {
-        height: 56px;
-        font-size: 24px;
-        padding: 0 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    .custom-button {
-        height: 48px;
-        font-size: 20px;
-        padding: 0 20px;
-    }
-}
-
+/* Optional: Additional fine-tuning for specific breakpoints if needed */
 @media (max-width: 480px) {
     .custom-button {
-        height: 40px;
-        font-size: 16px;
-        padding: 0 16px;
-        border-radius: 6px;
+        /* Any specific mobile adjustments if needed */
+        transform: scale(0.98);
+    }
+    
+    .custom-button:hover {
+        transform: scale(1) translateY(-1px);
     }
 }

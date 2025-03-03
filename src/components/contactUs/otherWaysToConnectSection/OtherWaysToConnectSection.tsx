@@ -9,22 +9,22 @@ const OtherWaysToConnectSection = () => {
 
     const socialButtons = [
         {
-            id: 'google',
+            id: 'gogole',
             network: 'google',
-            url: 'https://chat.google.com',
-            label: 'Google'
+            url: 'mailto:info@hashtechinfo.com',
+            label: 'Gmail'
         },
         {
             id: 'whatsapp',
             network: 'whatsapp',
-            url: 'https://wa.me/your-number',
+            url: 'https://wa.me/16699991087?text=Hello,%20I%20would%20like%20to%20connect%20with%20you',
             label: 'WhatsApp'
         },
         {
-            id: 'discord',
-            network: 'discord',
-            url: 'https://discord.gg/your-invite-link',
-            label: 'Discord'
+            id: 'linkedin',
+            network: 'linkedin',
+            url: 'https://www.linkedin.com/company/hashtech-info/',
+            label: 'Linkedin'
         }
     ];
 
@@ -46,6 +46,7 @@ const OtherWaysToConnectSection = () => {
                             className="other-ways-to-connect-button"
                             onMouseEnter={() => setHoveredButton(button.id)}
                             onMouseLeave={() => setHoveredButton(null)}
+                            onClick={() => window.open(button.url, '_blank')}
                         >
                             <SocialIcon
                                 network={button.network}

@@ -3,6 +3,7 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  padding-top: 80px; /* Added padding for header */
 }
 
 .hero-container {
@@ -13,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  min-height: calc(100vh - 80px); /* Adjusted for header height */
 }
 
 .hero-content {
@@ -26,7 +28,7 @@
 }
 
 .hero-title {
-  font-size: 44px;
+  font-size: clamp(24px, 5vw, 40px);
   font-weight: 700;
   line-height: 1.2;
   color: #1F2937;
@@ -40,7 +42,7 @@
 
 .hero-description {
   margin-top: 12px;
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 400;
   line-height: 1.6;
   max-width: 90%;
@@ -53,7 +55,7 @@
   margin-top: 42px;
   padding: 12px 32px;
   color: white;
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 500;
   border-radius: 6px;
   border: none;
@@ -103,8 +105,8 @@
   .hero-container {
     flex-direction: column;
     padding: 1rem;
-    min-height: 100vh;
-    justify-content: center;
+    min-height: calc(100vh - 80px); /* Adjusted for header */
+    justify-content: center; /* Changed to center for mobile */
   }
 
   .hero-content {
@@ -122,37 +124,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
   }
 
   .hero-main-image {
     width: 80%;
     max-width: 500px;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  /* Center the button for mobile */
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-section {
-    min-height: 100vh;
-  }
-
   .hero-container {
-    padding: 4rem 1rem 2rem;
+    padding: 1rem;
   }
 
   .hero-content {
-    margin-top: 2rem;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .hero-button {
-    margin: 24px auto 0;
+    margin-top: 1rem;
   }
 
   .hero-main-image {
@@ -162,22 +158,21 @@
 
 @media (max-width: 480px) {
   .hero-container {
-    padding: 5rem 1rem 2rem;
+    padding: 1rem;
   }
 
   .hero-content {
     padding: 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .hero-description {
-    font-size: 14px;
+    margin-top: 0.5rem;
   }
 
   .hero-main-image {
     width: 95%;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-content {
+    padding: 1rem;
   }
 }

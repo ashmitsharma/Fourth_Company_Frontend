@@ -2,14 +2,15 @@
     min-height: 100vh;
     display: flex;
     width: 100%;
-    padding-top: 80px; /* Add padding for header */
+    padding-top: clamp(50px, 5vw, 80px);
+    overflow-x: hidden;
 }
 
 .bootcamp-hero-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6rem;
+    padding: clamp(1.5rem, 4vw, 6rem);
     width: 100%;
     gap: 2rem;
 }
@@ -19,13 +20,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
     flex: 1;
+    min-width: 0;
 }
 
 .bootcamp-hero-title {
     font-family: Poppins, sans-serif;
-    font-size: 44px;
+    font-size: clamp(28px, 4vw, 44px);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -36,17 +38,17 @@
 
 .bootcamp-hero-subtitle {
     font-family: Poppins, sans-serif;
-    font-size: 24px;
+    font-size: clamp(16px, 2.5vw, 24px);
     font-weight: 600;
     line-height: 1.2;
 }
 
 .bootcamp-hero-description {
     font-family: Poppins, sans-serif;
-    font-size: 18px;
+    font-size: clamp(14px, 1.8vw, 18px);
+    text-align: justify;
     font-weight: 400;
     line-height: 1.4;
-    text-align: justified;
 }
 
 .bootcamp-hero-images {
@@ -63,46 +65,8 @@
     object-fit: contain;
 }
 
-/* Large screens */
-@media screen and (max-width: 1400px) {
-    .bootcamp-hero-container {
-        padding: 5rem;
-    }
-    
-    .bootcamp-hero-title {
-        font-size: 42px;
-    }
-    
-    .bootcamp-hero-subtitle,
-    .bootcamp-hero-description {
-        font-size: 22px;
-    }
-}
-
-/* Medium screens */
-@media screen and (max-width: 1200px) {
-    .bootcamp-hero-container {
-        padding: 4rem;
-    }
-    
-    .bootcamp-hero-title {
-        font-size: 38px;
-    }
-    
-    .bootcamp-hero-subtitle,
-    .bootcamp-hero-description {
-        font-size: 20px;
-    }
-}
-
-/* Tablet screens */
 @media screen and (max-width: 992px) {
-    .bootcamp-hero-section {
-        padding-top: 70px;
-    }
-
     .bootcamp-hero-container {
-        padding: 3rem;
         flex-direction: column;
         text-align: center;
     }
@@ -112,74 +76,29 @@
         align-items: center;
     }
     
-    .bootcamp-hero-title {
-        font-size: 36px;
-    }
-    
-    .bootcamp-hero-subtitle,
-    .bootcamp-hero-description {
-        font-size: 18px;
-    }
-    
     .bootcamp-hero-description {
         text-align: center;
         max-width: 800px;
     }
     
     .bootcamp-hero-images {
-        max-width: 70%;
+        max-width: clamp(70%, 75vw, 90%);
         margin-top: 2rem;
     }
 }
 
-/* Mobile screens */
 @media screen and (max-width: 768px) {
-    .bootcamp-hero-section {
-        padding-top: 60px;
-    }
-
     .bootcamp-hero-container {
-        padding: 2.5rem 2rem;
-    }
-    
-    .bootcamp-hero-title {
-        font-size: 32px;
-    }
-    
-    .bootcamp-hero-subtitle,
-    .bootcamp-hero-description {
-        font-size: 16px;
-    }
-    
-    .bootcamp-hero-images {
-        max-width: 90%;
+        gap: clamp(1.5rem, 3vw, 2rem);
     }
 }
 
-/* Small mobile screens */
 @media screen and (max-width: 480px) {
-    .bootcamp-hero-section {
-        padding-top: 50px;
-    }
-
     .bootcamp-hero-container {
-        padding: 2rem 1.5rem;
         gap: 1.5rem;
     }
     
     .bootcamp-hero-content {
         gap: 1rem;
-    }
-    
-    .bootcamp-hero-title {
-        font-size: 28px;
-    }
-    
-    .bootcamp-hero-subtitle {
-        font-size: 16px;
-    }
-    
-    .bootcamp-hero-description {
-        font-size: 14px;
     }
 }

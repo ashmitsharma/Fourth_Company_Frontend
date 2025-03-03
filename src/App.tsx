@@ -7,6 +7,7 @@ import Services from './screens/Services'
 import Bootcamp from './screens/Bootcamp'
 import ContactUs from './screens/ContactUs'
 import PrivacyPolicy from './screens/PrivacyPolicy'
+// import ChatBot from './components/chatbot/ChatBot';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
+        {/* <ChatBot /> */}
       </div>
     </Router>
   );

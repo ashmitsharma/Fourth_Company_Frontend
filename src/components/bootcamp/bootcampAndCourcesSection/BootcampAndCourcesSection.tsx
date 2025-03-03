@@ -35,9 +35,6 @@ const BootcampAndCourcesSection = () => {
                             key={index}
                             image={course.image}
                             title={course.title}
-                            date={course.date}
-                            time={course.time}
-                            instructor={course.instructor}
                         />
                     ))}
                 </div>

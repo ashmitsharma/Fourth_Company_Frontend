@@ -81,6 +81,128 @@
     outline-offset: 1px;
 }
 
+.message-box {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: clamp(14px, 2vw, 16px);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.message-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Phone input styles */
+.phone-input {
+    width: 100%;
+}
+
+.phone-input .react-tel-input {
+    width: 100%;
+}
+
+.phone-input .react-tel-input .form-control {
+    width: 100% !important;
+    height: auto;
+    padding-left: 50px !important;
+    padding: clamp(0.75rem, 2vw, 1rem);
+    border: none;
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    font-size: clamp(14px, 2vw, 16px);
+    transition: all 0.3s ease;
+}
+
+.phone-input .react-tel-input .form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #8833FF;
+    background-color: #fff;
+}
+
+.phone-input .react-tel-input .selected-flag {
+    width: 42px;
+    padding: 0 0 0 8px;
+    border-radius: 8px 0 0 8px;
+}
+
+.phone-input .react-tel-input .flag-dropdown {
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 8px 0 0 8px;
+}
+
+.phone-input .react-tel-input .flag-dropdown.open {
+    background-color: #fff;
+}
+
+.phone-input .react-tel-input .flag-dropdown:hover,
+.phone-input .react-tel-input .flag-dropdown:focus {
+    background-color: #fff;
+}
+
+.phone-input .react-tel-input .selected-flag {
+    background-color: transparent;
+    border-radius: 8px 0 0 8px;
+}
+
+.phone-input .react-tel-input .selected-flag:hover,
+.phone-input .react-tel-input .selected-flag:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.phone-input .react-tel-input .country-list {
+    border-radius: 8px;
+    margin-top: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.phone-input .react-tel-input .country-list .search {
+    background-color: white;
+    padding: 10px;
+}
+
+.phone-input .react-tel-input .country-list .search input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.phone-input .react-tel-input .country-list .search input:focus {
+    outline: none;
+    border-color: #8833FF;
+}
+
+.error-message.phone-error {
+    color: #721c24;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: rgba(248, 215, 218, 0.5);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .contact-us-form {

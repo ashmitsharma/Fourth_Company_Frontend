@@ -74,12 +74,24 @@
 
     .our-plans-container {
         padding: 20px 15px;
-        margin: 0 10px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .our-plan-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 25px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .plan-card {
+        width: 90%; /* Ensures all cards have the same width */
+        max-width: 400px; /* Prevents cards from being too wide */
     }
 
     .our-plan-title {
@@ -87,3 +99,5 @@
         margin-bottom: 30px;
     }
 }
+
+

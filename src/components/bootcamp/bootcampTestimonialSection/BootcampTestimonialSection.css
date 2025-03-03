@@ -106,23 +106,24 @@
     }
 
     .bootcamp-testimonial {
-        flex-direction: column;
-        padding: 0;
-        margin-top: 100px;
+        padding: 20px;
+        margin-top: 120px;
         min-height: 300px;
         width: 400px;
+        position: relative;
     }
 
     .bootcamp-testimonial-image {
+        position: absolute;
         left: 50%;
-        top: -100px;
+        top: -120px;
         transform: translateX(-50%);
         width: 200px;
         height: 220px;
     }
 
     .bootcamp-testimonial-description {
-        padding: 60px 25px 30px;
+        padding: 120px 25px 30px;
         text-align: center;
     }
     
@@ -138,31 +139,19 @@
     }
 
     .bootcamp-testimonial {
-        margin-top: 90px;
+        margin-top: 100px;
         min-height: 280px;
-        width: 250px;
+        width: 300px;
+        padding: 15px;
     }
 
     .bootcamp-testimonial-image {
         width: 170px;
         height: 190px;
-        top: -90px;
+        top: -100px;
     }
 
     .bootcamp-testimonial-description {
-        padding: 50px 20px 30px;
-    }
-    
-    .bootcamp-testimonial-description span:first-child {
-        font-size: 20px;
-    }
-
-    .bootcamp-testimonial-description span:last-child {
-        font-size: 16px;
-    }
-    
-    .bootcamp-testimonial-title {
-        font-size: 28px;
-        margin-bottom: 2.5rem;
+        padding: 100px 15px 20px;
     }
 }

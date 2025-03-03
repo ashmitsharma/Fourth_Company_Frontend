@@ -1,4 +1,3 @@
-import React from 'react';
 import AnimatedCounter from '../../common/AnimatedCounter/AnimatedCounter';
 import './StatsCounter.css';
 

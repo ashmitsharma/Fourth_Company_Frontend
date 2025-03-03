@@ -1,14 +1,54 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Section from '../../common/Section/Section';
 import rectangle11 from '../../../assets/images/backgroundDesign1.webp';
 import './InfoSection.css';
 import ServiceCard from '../../common/ServiceCard/ServiceCard';
-import JobSearchIcon from '../../../assets/icons/job_icon.png';
-import ResumeIcon from '../../../assets/icons/resume_icon.png';
-import InterviewIcon from '../../../assets/icons/interview_icon.png';
 import Button from '../../common/Button/Button';
 
+interface Service {
+    ID: number;
+    Service_name: string;
+    URL: string;
+    logoImage: string;
+    smallDescription: string;
+}
+
 const InfoSection = () => {
+  const [services, setServices] = useState<Service[]>([]);
+  const [error, setError] = useState<string>("");
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/Domains_url`, {
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_BEARER_TOKEN}`
+          }
+        });
+        setServices(response.data);
+      } catch (err) {
+        setError("Failed to fetch services");
+        console.error("Error fetching services:", err);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  // Filter services based on Service_name
+  const jobSearchService = services.find(service => 
+    service.Service_name.toLowerCase().includes('job matching')
+  );
+  
+  const resumeService = services.find(service => 
+    service.Service_name.toLowerCase().includes('resume optimization')
+  );
+  
+  const interviewService = services.find(service => 
+    service.Service_name.toLowerCase().includes('mock interview')
+  );
+
   return (
     <Section
       backgroundColor="#EAEAEA"
@@ -18,13 +58,40 @@ const InfoSection = () => {
       <div className="container">
         <div className="info-content">
           <div className='cards-container'>
+            {error && <p className="error-message">{error}</p>}
             <div className='single-card'>
-              <ServiceCard imageUrl={JobSearchIcon} title='Job Search Stategies' altText='Job Search' flipText='Find your dream job' />
-
+              {jobSearchService && (
+                <ServiceCard 
+                  id={jobSearchService.ID}
+                  imageUrl={jobSearchService.logoImage} 
+                  title={jobSearchService.Service_name} 
+                  URL={jobSearchService.URL} 
+                  altText={jobSearchService.Service_name} 
+                  flipText={jobSearchService.smallDescription} 
+                />
+              )}
             </div>
             <div className='stacked-cards'>
-              <ServiceCard imageUrl={ResumeIcon} title='Resume Optimization' altText='Resume' flipText='Create a standout resume' />
-              <ServiceCard imageUrl={InterviewIcon} title='Mock Interviews' altText='Mock Interview' flipText='Prepare for interviews' />
+              {resumeService && (
+                <ServiceCard 
+                  id={resumeService.ID}
+                  imageUrl={resumeService.logoImage} 
+                  title={resumeService.Service_name} 
+                  URL={resumeService.URL} 
+                  altText={resumeService.Service_name} 
+                  flipText={resumeService.smallDescription} 
+                />
+              )}
+              {interviewService && (
+                <ServiceCard 
+                  id={interviewService.ID}
+                  imageUrl={interviewService.logoImage} 
+                  title={interviewService.Service_name} 
+                  URL={interviewService.URL} 
+                  altText={interviewService.Service_name} 
+                  flipText={interviewService.smallDescription} 
+                />
+              )}
             </div>
           </div>
 

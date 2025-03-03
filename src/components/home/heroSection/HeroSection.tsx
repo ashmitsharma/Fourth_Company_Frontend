@@ -1,4 +1,3 @@
-import React from 'react';
 import background from '../../../assets/images/backgroundImage.webp';
 import heroImage from '../../../assets/images/hero-image.webp';
 import Section from '../../common/Section/Section';
@@ -23,7 +22,7 @@ const HeroSection = () => {
             <p className="hero-description">
               Your gateway to career success, from job search strategies to mock interviews and everything in between.
             </p>
-            <Button text='Explore' to='/contact-us' className='hero-button'/>
+            <Button text='Explore' to='/services' className='hero-button'/>
           </div>
         </div>
       </div>

@@ -12,9 +12,9 @@ const Home = () => {
     return (
         <>
             <SEOMetaTags 
-                title="HashTech Info - Career Development & Staffing Solutions"
-                description="Transform your career with HashTech Info's expert services in job placement, resume optimization, interview coaching, and visa support for IT, engineering, and digital marketing professionals."
-                keywords="career development, job placement, resume optimization, interview coaching, IT jobs, engineering careers, digital marketing jobs, visa support"
+                title="HashTech Info"
+                description="Transform your career with HashTech Info's expert staffing and development solutions. Get personalized job search strategies, resume optimization, and interview preparation to accelerate your professional growth."
+                keywords="career transformation, staffing solutions, job search strategies, resume optimization, interview preparation, mock interviews, career coaching, professional development, career success"
                 canonical="https://hashtechinfo.com/"
             />
             <GradientBar />

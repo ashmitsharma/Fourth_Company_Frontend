@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { SocialIcon } from 'react-social-icons';
@@ -18,7 +17,7 @@ const Footer = () => {
                     <h3>Useful Links</h3>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">Services</Link></li>
+                        <li><Link to="/services">Services</Link></li>
                         <li><Link to="/bootcamp">Bootcamp</Link></li>
                         <li><Link to="/contact-us#faq-section">FAQs</Link></li>
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>

@@ -13,9 +13,9 @@ const Services = () => {
     return (
         <>
             <SEOMetaTags 
-                title="Our Services - HashTech Info | Career Development Solutions"
-                description="Explore HashTech Info's comprehensive career services including resume optimization, interview preparation, job placement, and visa support services for IT and engineering professionals."
-                keywords="career services, resume writing, interview preparation, job placement services, visa support, IT careers, engineering jobs"
+                title="Services & Plans - HashTech Info | From Application to Acceptance"
+                description="Comprehensive career development services including initial consultation, profile enhancement, interview preparation, job matching, offer negotiation, and visa support. Choose from Basic, Standard, Premium, and specialized plans."
+                keywords="career services, profile enhancement, resume makeover, LinkedIn optimization, interview preparation, job matching, offer negotiation, visa support, career consultation, mock interviews, career plans, career development process"
                 canonical="https://hashtechinfo.com/services"
             />
             <GradientBar />
